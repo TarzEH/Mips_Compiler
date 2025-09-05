@@ -1,0 +1,24 @@
+# Generated files
+lex.yy.c
+y.tab.c
+y.tab.h
+
+# Compiled executable
+CPM.exe
+*.exe
+
+# Output files
+*.LST
+*.S
+MIPS.S
+errors.LST
+
+# IDE files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

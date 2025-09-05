@@ -1,0 +1,17 @@
+program ControlFlow
+bgn
+let int : num;
+
+    read(num);
+    
+    if (num >= 0)
+        out("Positive number")
+    else
+        out("Negative number");
+        
+    while (num > 0)
+    {
+        out(num);
+        num := num - 1;
+    }
+end

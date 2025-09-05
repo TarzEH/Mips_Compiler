@@ -10,11 +10,33 @@ A compiler that translates Pascal syntax into MIPS assembly language using Bison
 - Error detection and reporting
 - MIPS code generation
 
+## Building the Compiler
+
+### Prerequisites
+- GCC compiler
+- Flex (lexical analyzer generator)
+- Bison (parser generator)
+- Make (optional, for automated building)
+
+### Build Instructions
+
+#### Using Make (Recommended)
+```bash
+make
+```
+
+#### Manual Build
+```bash
+bison -d CPM.y
+flex CPM.lex
+gcc -o CPM.exe lex.yy.c y.tab.c
+```
+
 ## How to Use
 
 ### Prerequisites
-- Command line interface (CMD)
-- Compiler files extracted to a directory
+- Built compiler executable (CPM.exe)
+- Pascal source files to compile
 
 ### Steps
 
@@ -57,6 +79,26 @@ The compiler provides comprehensive error reporting. Below are examples of diffe
 - **Success**: `.mips` file containing the translated assembly code
 - **Error**: `.txt` file containing detailed error messages and line numbers
 
+## Project Structure
+
+```
+Mips_Compiler/
+├── CPM.lex          # Lexical analyzer specification
+├── CPM.y            # Grammar specification (Bison)
+├── CPM.exe          # Compiled executable
+├── examples/        # Test cases
+├── Makefile         # Build automation
+├── README.md        # This file
+├── WorkingExample.txt    # Valid Pascal code
+└── NotWorkingExample.txt # Invalid Pascal code (for testing)
+```
+
+## Example Programs
+
+The `examples/` directory contains sample Pascal programs:
+- `basic_arithmetic.txt` - Arithmetic operations
+- `control_flow.txt` - If/else and while loops
+
 ## Technologies Used
 
 - **Flex**: Lexical analyzer generator
@@ -64,3 +106,21 @@ The compiler provides comprehensive error reporting. Below are examples of diffe
 - **C**: Implementation language
 - **Pascal**: Source language
 - **MIPS**: Target assembly language
+
+## Development
+
+### Clean Build
+```bash
+make clean
+make
+```
+
+### Testing
+```bash
+make test        # Test with working example
+make test-error  # Test with error example
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,0 +1,19 @@
+program BasicArithmetic
+bgn
+let int : x, y, result;
+
+    read(x);
+    read(y);
+    
+    result := x + y;
+    out("Sum: ");
+    out(result);
+    
+    result := x - y;
+    out("Difference: ");
+    out(result);
+    
+    result := x * y;
+    out("Product: ");
+    out(result);
+end
